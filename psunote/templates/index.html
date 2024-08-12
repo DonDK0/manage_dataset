@@ -27,6 +27,10 @@
       Tags: 
       {% for t in note.tags %}
         <a href="{{ url_for('tags_view', tag_name=t.name) }}">{{ t.name }}</a>
+        <a class="btn btn-danger rounded-circle" style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" href="{{ url_for('tags_delete', tag_name=t.name, note_id=note.id) }}">
+          Delete
+        </a>
+
     {% endfor %}
       <br>
       Last update: {{ note.updated_date }}
